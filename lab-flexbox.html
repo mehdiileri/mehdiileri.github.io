@@ -12,44 +12,144 @@
 
     <div class="wrapper">
         
-        <nav class="navbar">
-            <div class="logo">FLEX LOGO</div>
-            <div class="nav-links">
-                <a href="#">Ana Sayfa</a>
-                <a href="#">Hakkımızda</a>
-                <a href="#">Hizmetler</a>
-                <a href="#">İletişim</a>
-            </div>
-        </nav>
-
-        <section class="hero">
-            <div class="hero-content">
-                <h1>Flexbox ile Düzen</h1>
-                <p>Yatay ve dikey hizalama artık çok kolay.</p>
-                <button class="btn">Keşfet</button>
-            </div>
-            <div class="hero-image">
-                <p>Görsel Alanı (Placeholder)</p>
+        <section class="section-navbar">
+            <div class="card-inner flex-col justify-between">
+                <div class="nav-top flex-row space-between align-center">
+                    <div class="logo">LOGO</div>
+                    <div class="nav-links flex-row gap-15">
+                        <a href="#">Ana Sayfa</a>
+                        <a href="#">Hakkında</a>
+                        <a href="#">Dersler</a>
+                        <a href="#">İletişim</a>
+                    </div>
+                </div>
+                <div class="badges-row flex-row gap-10">
+                    <span class="badge">flex layout</span>
+                    <span class="badge">justify-content</span>
+                    <span class="badge">flex layout</span>
+                    <span class="badge">10vh height</span>
+                    <span class="badge">100vw width</span>
+                </div>
             </div>
         </section>
 
-        <section class="cards-section">
-            <div class="card">Kart 1</div>
-            <div class="card">Kart 2</div>
-            <div class="card">Kart 3</div>
-            <div class="card">Kart 4</div>
-            <div class="card">Kart 5</div>
-            <div class="card">Kart 6</div>
+        <section class="section-hero">
+            <div class="card-inner flex-col justify-between">
+                
+                <div class="hero-main flex-row space-between align-stretch">
+                    <div class="hero-content flex-col">
+                        <h2>Hero Başlık</h2>
+                        <p class="subtitle">Açıklama metni</p>
+                        <div class="skeleton w-80"></div>
+                        <div class="skeleton w-50"></div>
+                        <button class="btn btn-blue mt-auto">Buton</button>
+                    </div>
+                    <div class="hero-image flex-row justify-center align-center">
+                        <svg width="60" height="60" viewBox="0 0 24 24" fill="#cbd5e1" xmlns="http://www.w3.org/2000/svg"><path d="M21 19V5C21 3.9 20.1 3 19 3H5C3.9 3 3 3.9 3 5V19C3 20.1 3.9 21 5 21H19C20.1 21 21 20.1 21 19ZM8.5 13.5L11 16.51L14.5 12L19 18H5L8.5 13.5Z"/></svg>
+                    </div>
+                </div>
+
+                <div class="badges-row flex-row gap-10">
+                    <span class="badge">flex-direction: row</span>
+                    <span class="badge">height: 30vh</span>
+                    <span class="badge">align-items: stretch</span>
+                </div>
+            </div>
         </section>
 
-        <section class="flex-grow-section">
-            <div class="box box-1">Kutu 1 (Grow: 1)</div>
-            <div class="box box-2">Kutu 2 (Grow: 2)</div>
-            <div class="box box-3">Kutu 3 (Grow: 1)</div>
+        <section class="section-cards">
+            <div class="card-inner flex-col justify-between">
+                
+                <div class="section-header flex-row space-between align-center">
+                    <h2>Kartlar Bölümü</h2>
+                    <div class="flex-row gap-10">
+                        <span class="badge">multiple items</span>
+                        <span class="badge">flex layout - wrap</span>
+                    </div>
+                </div>
+
+                <div class="cards-container flex-row flex-wrap gap-15">
+                    <div class="item-card flex-col">
+                        <h4>Kart Başlığı</h4>
+                        <p class="subtitle">Kısa açiklama</p>
+                        <div class="skeleton w-100"></div>
+                        <div class="skeleton w-80"></div>
+                        <button class="btn btn-blue mt-auto">Buton</button>
+                    </div>
+                    <div class="item-card flex-col">
+                        <h4>Kart Başlığı</h4>
+                        <p class="subtitle">Kısa açiklama</p>
+                        <div class="skeleton w-100"></div>
+                        <div class="skeleton w-80"></div>
+                        <button class="btn btn-blue mt-auto">Buton</button>
+                    </div>
+                    <div class="item-card flex-col">
+                        <h4>Kart Başlığı</h4>
+                        <p class="subtitle">Kısa açiklama</p>
+                        <div class="skeleton w-100"></div>
+                        <div class="skeleton w-80"></div>
+                        <button class="btn btn-blue mt-auto">Buton</button>
+                    </div>
+                    <div class="item-card flex-col">
+                        <h4>Kart Başlığı</h4>
+                        <p class="subtitle">Kısa açiklama</p>
+                        <div class="skeleton w-100"></div>
+                        <div class="skeleton w-80"></div>
+                        <button class="btn btn-blue mt-auto">Buton</button>
+                    </div>
+                </div>
+
+                <div class="badges-row flex-row gap-10">
+                    <span class="badge">flex-direction</span>
+                    <span class="badge">flex layout - wrap</span>
+                    <span class="badge">gap + align/hizalama</span>
+                    <span class="badge">height: iç: 30vh</span>
+                </div>
+            </div>
         </section>
 
-        <footer class="footer">
-            <p>Flexbox Ödevi © 2026 | Mehdi İleri</p>
+        <section class="section-flex-grow">
+            <div class="card-inner flex-col justify-between">
+                
+                <div class="section-header flex-row space-between align-center">
+                    <h2>Flex Grow Uygulama</h2>
+                    <div class="flex-row gap-10">
+                        <span class="badge">flex-grow</span>
+                        <span class="badge">height: 20vh</span>
+                        <span class="badge">stretch (esneme)</span>
+                    </div>
+                </div>
+
+                <div class="grow-container flex-row align-stretch gap-15">
+                    <div class="grow-box box-1 flex-col align-center justify-center">
+                        <h4>1 Kutu</h4>
+                        <p class="subtitle">flex-grow: 1;</p>
+                        <button class="btn btn-blue mt-10">Buton</button>
+                    </div>
+                    <div class="grow-box box-2 flex-col align-center justify-center">
+                        <h4>2 Kutu</h4>
+                        <p class="subtitle">flex-grow: 2;</p>
+                        <button class="btn btn-green mt-10">Buton</button>
+                    </div>
+                    <div class="grow-box box-3 flex-col align-center justify-center">
+                        <h4>3 Kutu</h4>
+                        <p class="subtitle">flex-grow: 1;</p>
+                        <button class="btn btn-orange mt-10">Buton</button>
+                    </div>
+                </div>
+
+                <div class="badges-row flex-row gap-10">
+                    <span class="badge">multiple items</span>
+                    <span class="badge">flex layout + wrap</span>
+                    <span class="badge">gap + align/hizalama</span>
+                </div>
+            </div>
+        </section>
+
+        <footer class="section-footer">
+            <div class="card-inner flex-row justify-center align-center">
+                <p>© 2026 - Temel Flexbox Örneği</p>
+            </div>
         </footer>
 
     </div>
