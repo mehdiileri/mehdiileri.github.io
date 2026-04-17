@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hafta 6 - Uygulama 1</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            color: #333;
+        }
+        .container {
+            max-width: 400px;
+        }
+        h2 {
+            margin-bottom: 20px;
+        }
+        input[type="text"], input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #e0e0e0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        button:hover {
+            background-color: #d0d0d0;
+        }
+        .result-box {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #f0f0f0;
+            border-radius: 4px;
+            display: none; /* Hesaplama yapılana kadar gizli */
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Öğrenci Not Hesaplama</h2>
+    
+    <input type="text" id="adSoyad" placeholder="Ad Soyad">
+    <input type="number" id="vize" placeholder="Vize Notu (Örn: 60)" min="0" max="100">
+    <input type="number" id="final" placeholder="Final Notu (Örn: 60)" min="0" max="100">
+    
+    <button onclick="hesapla()">Hesapla</button>
+
+    <div class="result-box" id="sonucKutusu">
+        <h3 id="sonucAd" style="margin-top: 0;"></h3>
+        <p>Ortalama: <span id="sonucOrt"></span></p>
+        <p>Harf Notu: <span id="sonucHarf"></span></p>
+        <p>Durum: <span id="sonucDurum"></span></p>
+    </div>
+</div>
+
+<script>
+    function hesapla() {
+        const adSoyad = document.getElementById('adSoyad').value;
+        const vize = parseFloat(document.getElementById('vize').value);
+        const final = parseFloat(document.getElementById('final').value);
+
+        if (!adSoyad || isNaN(vize) || isNaN(final)) {
+            alert("Lütfen tüm alanları doldurunuz.");
+            return;
+        }
+
+        const ortalama = (vize * 0.4) + (final * 0.6);
+        let harfNotu = "FF";
+
+        // Görseldeki 60 = CB mantığına uygun standart bir harf notu baremi
+        if (ortalama >= 90) harfNotu = "AA";
+        else if (ortalama >= 80) harfNotu = "BA";
+        else if (ortalama >= 70) harfNotu = "BB";
+        else if (ortalama >= 60) harfNotu = "CB";
+        else if (ortalama >= 50) harfNotu = "CC";
+        else if (ortalama >= 40) harfNotu = "DC";
+        else if (ortalama >= 30) harfNotu = "DD";
+
+        const durum = ortalama >= 50 ? "Geçti" : "Kaldı";
+
+        // Sonuçları Ekrana Yazdırma
+        document.getElementById('sonucAd').innerText = adSoyad;
+        document.getElementById('sonucOrt').innerText = ortalama.toFixed(2);
+        document.getElementById('sonucHarf').innerText = harfNotu;
+        document.getElementById('sonucDurum').innerText = durum;
+        
+        document.getElementById('sonucKutusu').style.display = 'block';
+    }
+</script>
+
+</body>
+</html>
